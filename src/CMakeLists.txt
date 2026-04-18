@@ -7,14 +7,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
 
+# Add in KDDockWidgets
+add_subdirectory(lib/KDDockWidgets)
+if(NOT TARGET kddockwidgets)
+    # For the purpose of our example, we're looquking for Qt5 or Qt6 KDDW.
+    # For your own purposes, just chose the one you need.
+    find_package(KDDockWidgets QUIET)
+    if(NOT KDDockWidgets_FOUND)
+        find_package(KDDockWidgets-qt6 REQUIRED)
+    endif()
+endif()
+
 qt_standard_project_setup(REQUIRES 6.10)
 
 qt_add_executable(laika-studio
     main.cpp
 )
 
+# link the dock widgets from earlier
+target_link_libraries(laika-studio PRIVATE KDAB::kddockwidgets)
+
 qt_add_qml_module(laika-studio
-    URI laika-studio
+    URI LaikaStudio
     QML_FILES
         Main.qml
 )
