@@ -1,0 +1,14 @@
+-rootPath
+/Users/ian/Documents/GitHub/laika-studio/src
+-cmake-output
+-output-file
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/qml_imports/appLaikaStudio_conf.cmake
+-importPath
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug
+-importPath
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/LaikaStudio
+-importPath
+/Users/ian/Qt/6.11.0/macos/qml
+-qrcFiles
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/qmake_LaikaStudio.qrc
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/appLaikaStudio_raw_qml_0.qrc

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/LaikaStudio">
+    <file alias="qmldir">/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/LaikaStudio/qmldir</file>
+  </qresource>
+</RCC>
+

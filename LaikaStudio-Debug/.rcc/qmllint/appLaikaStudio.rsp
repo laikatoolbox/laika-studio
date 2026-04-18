@@ -1,0 +1,14 @@
+--bare
+-I
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug
+-I
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/LaikaStudio
+-I
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug
+-I
+/Users/ian/Qt/6.11.0/macos/qml
+--resource
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/qmake_LaikaStudio.qrc
+--resource
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/appLaikaStudio_raw_qml_0.qrc
+/Users/ian/Documents/GitHub/laika-studio/src/Main.qml

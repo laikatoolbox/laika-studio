@@ -1,0 +1,6 @@
+module LaikaStudio
+typeinfo appLaikaStudio.qmltypes
+prefer :/qt/qml/LaikaStudio/
+Main 254.0 Main.qml
+depends QtQuick
+

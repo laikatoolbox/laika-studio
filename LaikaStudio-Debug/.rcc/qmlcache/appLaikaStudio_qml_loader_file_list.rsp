@@ -1,0 +1,5 @@
+--resource
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/qmake_LaikaStudio.qrc
+--resource
+/Users/ian/Documents/GitHub/laika-studio/LaikaStudio-Debug/.qt/rcc/appLaikaStudio_raw_qml_0.qrc
+/qt/qml/LaikaStudio/Main.qml

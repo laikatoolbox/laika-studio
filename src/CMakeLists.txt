@@ -1,57 +1,41 @@
-cmake_minimum_required(VERSION 3.21.1)
+cmake_minimum_required(VERSION 3.16)
 
-option(LINK_INSIGHT "Link Qt Insight Tracker library" ON)
-option(BUILD_QDS_COMPONENTS "Build design studio components" ON)
+project(laika-studio VERSION 0.1 LANGUAGES CXX)
 
-project(LaikaStudioApp LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+find_package(Qt6 REQUIRED COMPONENTS Quick)
 
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/qml)
-set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
-    CACHE STRING "Import paths for Qt Creator's code model"
-    FORCE
+qt_standard_project_setup(REQUIRES 6.10)
+
+qt_add_executable(laika-studio
+    main.cpp
 )
 
-# QT
-find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets Qml Quick QuickTimeline ShaderTools)
-qt_standard_project_setup()
+qt_add_qml_module(laika-studio
+    URI laika-studio
+    QML_FILES
+        Main.qml
+)
 
-# Add in KDDockWidgets
-add_subdirectory(lib/KDDockWidgets)
-if(NOT TARGET kddockwidgets)
-    # For the purpose of our example, we're looking for Qt5 or Qt6 KDDW.
-    # For your own purposes, just chose the one you need.
-    find_package(KDDockWidgets QUIET)
-    if(NOT KDDockWidgets_FOUND)
-        find_package(KDDockWidgets-qt6 REQUIRED)
-    endif()
-endif()
+# Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
+# If you are developing for iOS or macOS you should consider setting an
+# explicit, fixed bundle identifier manually though.
+set_target_properties(laika-studio PROPERTIES
+#    MACOSX_BUNDLE_GUI_IDENTIFIER com.laika-toolbox.laika-studio
+    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
+    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
+    MACOSX_BUNDLE TRUE
+    WIN32_EXECUTABLE TRUE
+)
 
-qt_add_executable(${CMAKE_PROJECT_NAME})
-qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
-    PREFIX "/"
-    FILES
-        qtquickcontrols2.conf)
+target_link_libraries(laika-studio
+    PRIVATE Qt6::Quick
+)
 
-# link the dock widgets from earlier
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE KDAB::kddockwidgets)
-
-include(qds)
-
-if (BUILD_QDS_COMPONENTS)
-    include(qmlcomponents OPTIONAL)
-endif()
-
-if (LINK_INSIGHT)
-    include(insight OPTIONAL)
-endif ()
-
-include(GNUInstallDirs)
-install(TARGETS ${CMAKE_PROJECT_NAME}
-  BUNDLE DESTINATION .
-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+install(TARGETS laika-studio
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
