@@ -25,11 +25,6 @@ qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
     FILES
         qtquickcontrols2.conf)
 
-# KDDockWidgets submodule
-add_subdirectory("lib/KDDockWidgets")
-find_package(KDDockWidgets REQUIRED)
-target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE KDAB::kddockwidgets)
-
 include(qds)
 
 if (BUILD_QDS_COMPONENTS)
