@@ -9,6 +9,7 @@ Check out https://doc.qt.io/qtcreator/creator-quick-ui-forms.html for details on
 import QtQuick
 import QtQuick.Controls
 import LaikaStudio
+import com.kdab.dockwidgets 2.0 as KDDW
 
 Rectangle {
     width: 700
@@ -20,5 +21,23 @@ Rectangle {
         text: qsTr("Hello LaikaStudio")
         anchors.centerIn: parent
         font.family: Constants.font.family
+    }
+
+
+    KDDW.DockingArea {
+        id: root
+        anchors.fill: parent
+
+        // Each main layout needs a unique id
+        uniqueName: "MainLayout-1"
+
+        KDDW.DockWidget {
+            id: dock6
+            uniqueName: "dock6"
+            Rectangle {
+                color: "#2E8BC0"
+                anchors.fill: parent
+            }
+        }
     }
 }

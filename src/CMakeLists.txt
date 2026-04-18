@@ -19,11 +19,25 @@ set(QML_IMPORT_PATH ${QT_QML_OUTPUT_DIRECTORY}
 find_package(Qt6 6.8 REQUIRED COMPONENTS Core Gui Widgets Qml Quick QuickTimeline ShaderTools)
 qt_standard_project_setup()
 
+# Add in KDDockWidgets
+add_subdirectory(lib/KDDockWidgets)
+if(NOT TARGET kddockwidgets)
+    # For the purpose of our example, we're looking for Qt5 or Qt6 KDDW.
+    # For your own purposes, just chose the one you need.
+    find_package(KDDockWidgets QUIET)
+    if(NOT KDDockWidgets_FOUND)
+        find_package(KDDockWidgets-qt6 REQUIRED)
+    endif()
+endif()
+
 qt_add_executable(${CMAKE_PROJECT_NAME})
 qt_add_resources(${CMAKE_PROJECT_NAME} "configuration"
     PREFIX "/"
     FILES
         qtquickcontrols2.conf)
+
+# link the dock widgets from earlier
+target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE KDAB::kddockwidgets)
 
 include(qds)
 
