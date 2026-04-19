@@ -5,31 +5,38 @@ Window {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Laika Studio")
+
+    Text {
+        id: mainArea
+        anchors.fill: parent
+    }
 
     KDDW.DockWidget {
-        id: dock4
-        uniqueName: "dock4"
+        id: layersDockWidget
+        uniqueName: "layersDockWidget"
+        title: "Layers"
+
         Rectangle {
             color: "#85baa1"
             anchors.fill: parent
             Text {
-                font.pixelSize: 25
-                text: "Four"
+                text: "Layers"
                 anchors.centerIn: parent
             }
         }
     }
 
     KDDW.DockWidget {
-        id: dock5
-        uniqueName: "dock5"
+        id: timelineDockWidget
+        uniqueName: "timelineDockWidget"
+        title: "Timeline"
+
         Rectangle {
-            color: "#85baa1"
+            color: "#0000ff"
             anchors.fill: parent
             Text {
-                font.pixelSize: 25
-                text: "Five"
+                text: "Timeline"
                 anchors.centerIn: parent
             }
         }
@@ -39,11 +46,21 @@ Window {
         id: dockWidgetArea
         anchors.fill: parent
 
+        persistentCentralItemFileName: ":/Viewport.qml"
+        options: KDDW.KDDockWidgets.MainWindowOption_HasCentralWidget
+
+        anchors {
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+            top: mainArea.bottom
+        }
+
         uniqueName: "MyMainLayout"
 
         Component.onCompleted: {
-            addDockWidget(dock4, KDDW.KDDockWidgets.Location_OnBottom);
-            dock4.addDockWidgetAsTab(dock5);
+            addDockWidget(timelineDockWidget, KDDW.KDDockWidgets.Location_OnBottom, null, Qt.size(0, 100));
+            addDockWidget(layersDockWidget, KDDW.KDDockWidgets.Location_OnRight, null, Qt.size(200, 0));
         }
     }
 }
