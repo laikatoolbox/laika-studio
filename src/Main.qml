@@ -7,36 +7,27 @@ Window {
     visible: true
     title: qsTr("Laika Studio")
 
-    Text {
-        id: mainArea
-        anchors.fill: parent
-    }
-
     KDDW.DockWidget {
-        id: layersDockWidget
-        uniqueName: "layersDockWidget"
-        title: "Layers"
+        id: toolsDockWidget
+        uniqueName: "toolsDockWidget"
+        title: "Tools"
 
         Rectangle {
             color: "#85baa1"
             anchors.fill: parent
-            Text {
-                text: "Layers"
-                anchors.centerIn: parent
-            }
         }
     }
 
     KDDW.DockWidget {
-        id: timelineDockWidget
-        uniqueName: "timelineDockWidget"
+        id: timelineLayersDockWidget
+        uniqueName: "timelineLayersDockWidget"
         title: "Timeline"
 
         Rectangle {
             color: "#0000ff"
             anchors.fill: parent
             Text {
-                text: "Timeline"
+                text: "Timeline/Layers"
                 anchors.centerIn: parent
             }
         }
@@ -59,8 +50,8 @@ Window {
         uniqueName: "MyMainLayout"
 
         Component.onCompleted: {
-            addDockWidget(timelineDockWidget, KDDW.KDDockWidgets.Location_OnBottom, null, Qt.size(0, 100));
-            addDockWidget(layersDockWidget, KDDW.KDDockWidgets.Location_OnRight, null, Qt.size(200, 0));
+            addDockWidget(timelineLayersDockWidget, KDDW.KDDockWidgets.Location_OnBottom, null, Qt.size(0, 100));
+            addDockWidget(toolsDockWidget, KDDW.KDDockWidgets.Location_OnLeft, null, Qt.size(50, 0));
         }
     }
 }

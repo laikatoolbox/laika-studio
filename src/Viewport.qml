@@ -11,7 +11,6 @@ Rectangle {
         width: 300
         height: 125
 
-
         Text {
             text: "I'm the canvas"
             anchors.centerIn: parent

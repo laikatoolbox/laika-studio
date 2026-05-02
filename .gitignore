@@ -85,3 +85,4 @@ Temporary Items
 .cmake/
 .qtc_*/
 LaikaStudioApp-Debug/
+/.vscode
