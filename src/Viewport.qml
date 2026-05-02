@@ -1,7 +1,9 @@
 import QtQuick
+import QtQuick.Controls
+import LaikaCommon
 
 Rectangle {
-    color: Qt.hsla(0, 0, 0.1, 1.0)
+    color: Theme.viewportBackground
     anchors.fill: parent
 
     Rectangle {
@@ -11,9 +13,17 @@ Rectangle {
         width: 300
         height: 125
 
-        Text {
-            text: "I'm the canvas"
+
+
+        Button {
+            id: button
+            text: qsTr("Test")
             anchors.centerIn: parent
         }
+
+        /*Text {
+            text: "I'm the canvas"
+            anchors.centerIn: parent
+        }*/
     }
 }

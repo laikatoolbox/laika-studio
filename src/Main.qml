@@ -1,11 +1,13 @@
 import QtQuick
 import com.kdab.dockwidgets as KDDW
+import LaikaCommon
 
 Window {
     width: 640
     height: 480
     visible: true
     title: qsTr("Laika Studio")
+    color: Theme.windowBackground
 
     KDDW.DockWidget {
         id: toolsDockWidget
@@ -24,7 +26,7 @@ Window {
         title: "Timeline"
 
         Rectangle {
-            color: "#0000ff"
+            color: Theme.mainColor //"#0000ff"
             anchors.fill: parent
             Text {
                 text: "Timeline/Layers"
@@ -44,7 +46,7 @@ Window {
             left: parent.left
             right: parent.right
             bottom: parent.bottom
-            top: mainArea.bottom
+            top: parent.top
         }
 
         uniqueName: "MyMainLayout"

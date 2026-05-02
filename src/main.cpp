@@ -1,6 +1,6 @@
 #include <QGuiApplication>
+#include <QQuickStyle>
 #include <QQmlApplicationEngine>
-
 
 #include <kddockwidgets/Config.h>
 #include <kddockwidgets/core/DockRegistry.h>
@@ -12,8 +12,11 @@
 
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
-
     QQmlApplicationEngine engine;
+
+    engine.addImportPath(":/lib/laika-common");
+    QQuickStyle::setStyle("LaikaCommon");
+
     KDDockWidgets::initFrontend(KDDockWidgets::FrontendType::QtQuick);
     QObject::connect(
         &engine,
