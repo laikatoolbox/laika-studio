@@ -4,15 +4,14 @@ import QtQuick.Templates as T
 
 T.Button {
     id: control
-
     font: Theme.font
-
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                                          contentItem.implicitWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(background ? background.implicitHeight : 0,
                                           contentItem.implicitHeight + topPadding + bottomPadding)
     horizontalPadding: 10
     verticalPadding: 5
+    hoverEnabled: true
 
     background: Rectangle {
         id: buttonBackground
@@ -45,7 +44,7 @@ T.Button {
         states: [
             State {
                 name: "normal"
-                when: !control.down
+                when: !(control.down || control.activeFocus || control.hovered)
                 PropertyChanges {
                     buttonBackground.gradient1: Theme.buttonBackStart
                     buttonBackground.gradient2: Theme.buttonBackEnd
@@ -62,14 +61,22 @@ T.Button {
                     buttonBackground.insetBorder: Theme.buttonBorderInsideDown
                     buttonBackground.border.color: Theme.buttonBorderDown
                 }
+            },
+            State {
+                name: "focus"
+                when: control.activeFocus || control.hovered
+                PropertyChanges {
+                    buttonBackground.border.color: "red"
+                }
+
             }
+
         ]
     }
 
     contentItem: Text {
         id: textItem
         text: control.text
-
         font: control.font
         opacity: enabled ? 1.0 : 0.3
         color: Theme.buttonText
@@ -80,7 +87,7 @@ T.Button {
         states: [
             State {
                 name: "normal"
-                when: !control.down
+                when: !(control.down || control.activeFocus || control.hovered)
             },
             State {
                 name: "down"
@@ -88,6 +95,14 @@ T.Button {
                 PropertyChanges {
                     textItem.color: Theme.buttonTextDown
                 }
+            },
+            State {
+                name: "focus"
+                when: control.activeFocus || control.hovered
+                PropertyChanges {
+                    textItem.color: "red"
+                }
+
             }
         ]
     }
