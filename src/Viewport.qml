@@ -13,17 +13,9 @@ Rectangle {
         width: 300
         height: 125
 
-
-
-        Button {
-            id: button
-            text: qsTr("Test")
-            anchors.centerIn: parent
-        }
-
-        /*Text {
+        Text {
             text: "I'm the canvas"
             anchors.centerIn: parent
-        }*/
+        }
     }
 }

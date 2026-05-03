@@ -1,4 +1,5 @@
 import QtQuick
+import QtQuick.Controls
 import com.kdab.dockwidgets as KDDW
 import LaikaCommon
 
@@ -9,7 +10,13 @@ Window {
     title: qsTr("Laika Studio")
     color: Theme.windowBackground
 
-    KDDW.DockWidget {
+    Button {
+        id: button
+        text: qsTr("I'm a button")
+        anchors.centerIn: parent
+    }
+
+  /*  KDDW.DockWidget {
         id: toolsDockWidget
         uniqueName: "toolsDockWidget"
         title: "Tools"
@@ -55,5 +62,5 @@ Window {
             addDockWidget(timelineLayersDockWidget, KDDW.KDDockWidgets.Location_OnBottom, null, Qt.size(0, 100));
             addDockWidget(toolsDockWidget, KDDW.KDDockWidgets.Location_OnLeft, null, Qt.size(50, 0));
         }
-    }
+    }*/
 }

@@ -66,7 +66,10 @@ T.Button {
                 name: "focus"
                 when: control.activeFocus || control.hovered
                 PropertyChanges {
-                    buttonBackground.border.color: "red"
+                    buttonBackground.gradient1: Theme.buttonBackStartFocus
+                    buttonBackground.gradient2: Theme.buttonBackEndFocus
+                    buttonBackground.insetBorder: Theme.buttonBorderInsideFocus
+                    buttonBackground.border.color: Theme.buttonBorderFocus
                 }
 
             }
@@ -100,7 +103,7 @@ T.Button {
                 name: "focus"
                 when: control.activeFocus || control.hovered
                 PropertyChanges {
-                    textItem.color: "red"
+                    textItem.color: Theme.buttonTextFocus
                 }
 
             }
