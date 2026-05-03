@@ -10,11 +10,15 @@ Window {
     title: qsTr("Laika Studio")
     color: Theme.windowBackground
 
-    Button {
-        id: button
-        text: qsTr("I'm a button")
-        anchors.centerIn: parent
+    ThemeDemo {
+        anchors.fill: parent
     }
+
+    /*Button {
+        id: button
+        text: qsTr("Show Theme Demo")
+        anchors.centerIn: parent
+    }*/
 
   /*  KDDW.DockWidget {
         id: toolsDockWidget
