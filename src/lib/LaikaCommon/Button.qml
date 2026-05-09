@@ -17,7 +17,7 @@ T.Button {
         id: buttonBackground
         implicitWidth: 0
         implicitHeight: 0
-        opacity: enabled ? 1 : 0.3
+        opacity: enabled ? 1 : 0.5
         border.color: Theme.buttonBorder
         border.width: 1
         radius: Theme.elementRounding
@@ -64,16 +64,14 @@ T.Button {
             },
             State {
                 name: "focus"
-                when: control.activeFocus || control.hovered
+                when: (control.activeFocus || control.hovered) && control.enabled
                 PropertyChanges {
                     buttonBackground.gradient1: Theme.buttonBackStartFocus
                     buttonBackground.gradient2: Theme.buttonBackEndFocus
                     buttonBackground.insetBorder: Theme.buttonBorderInsideFocus
                     buttonBackground.border.color: Theme.buttonBorderFocus
                 }
-
             }
-
         ]
     }
 
@@ -81,7 +79,7 @@ T.Button {
         id: textItem
         text: control.text
         font: control.font
-        opacity: enabled ? 1.0 : 0.3
+        opacity: enabled ? 1.0 : 0.5
         color: Theme.buttonText
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
@@ -101,7 +99,7 @@ T.Button {
             },
             State {
                 name: "focus"
-                when: control.activeFocus || control.hovered
+                when: (control.activeFocus || control.hovered) && control.enabled
                 PropertyChanges {
                     textItem.color: Theme.buttonTextFocus
                 }

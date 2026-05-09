@@ -18,8 +18,6 @@ T.CheckBox {
         implicitHeight: Theme.baseSize * 2.6
         x: control.leftPadding
         anchors.verticalCenter: parent.verticalCenter
-        radius: 2
-        border.color: Theme.mainColor
 
         Rectangle {
             id: rectangle
@@ -35,11 +33,11 @@ T.CheckBox {
         states: [
             State {
                 name: "unchecked"
-                when: !control.checked && !control.down
+                when: control.checkState == Qt.Unchecked && !control.down
             },
             State {
                 name: "checked"
-                when: control.checked && !control.down
+                when: control.checkState == Qt.Checked && !control.down
 
                 PropertyChanges {
                     rectangle.visible: true
@@ -47,7 +45,7 @@ T.CheckBox {
             },
             State {
                 name: "unchecked_down"
-                when: !control.checked && control.down
+                when: control.checkState == Qt.Unchecked && control.down
 
                 PropertyChanges {
                     rectangle.color: Theme.mainColorDarker
@@ -57,7 +55,7 @@ T.CheckBox {
             State {
                 name: "checked_down"
                 extend: "unchecked_down"
-                when: control.checked && control.down
+                when: control.checkState == Qt.Checked && control.down
 
                 PropertyChanges {
                     rectangle.visible: true
@@ -70,7 +68,6 @@ T.CheckBox {
         implicitWidth: 140
         implicitHeight: Theme.baseSize * 3.8
         color: Theme.lightGray
-        border.color: Theme.gray
     }
 
     contentItem: Text {

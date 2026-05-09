@@ -2,16 +2,36 @@ import QtQuick
 import QtQuick.Controls
 import com.kdab.dockwidgets as KDDW
 import LaikaCommon
+import QtQuick.Layouts
 
 Window {
-    width: 640
-    height: 480
+    width: 750
+    height: 520
     visible: true
     title: qsTr("Laika Studio")
-    color: Theme.windowBackground
 
-    ThemeDemo {
+    color: Theme.windowBackground
+    palette.window: Theme.windowBackground
+    palette.windowText: Theme.windowText
+    palette.base: Theme.inputBackground
+    palette.text: Theme.inputText
+
+    Item {
         anchors.fill: parent
+
+        ThemeSelector {
+            id: themeSelector
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+        }
+
+        ThemePreview {
+            anchors.top: themeSelector.bottom
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+        }
     }
 
     /*Button {
@@ -20,7 +40,7 @@ Window {
         anchors.centerIn: parent
     }*/
 
-  /*  KDDW.DockWidget {
+    /*  KDDW.DockWidget {
         id: toolsDockWidget
         uniqueName: "toolsDockWidget"
         title: "Tools"

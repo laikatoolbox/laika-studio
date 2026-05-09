@@ -13,5 +13,7 @@ qt_add_qml_module(LaikaCommon
         Button.qml
         CheckBox.qml
         Switch.qml
-        ThemeDemo.qml
+        ThemePreview.qml
+        QML_FILES ThemeSelector.qml
+        QML_FILES TextArea.qml
 )

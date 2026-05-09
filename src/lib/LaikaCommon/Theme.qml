@@ -10,6 +10,11 @@ QtObject {
     property color windowText: "#505050"
     property color viewportBackground: "#272727"
 
+    /* Input (textboxes) */
+    property color inputBackground: "#ffffff"
+    property color inputText: "#505050"
+    property color inputBorder: "#a6a6a6"
+
     /* Button */
     property color buttonBorder: "#b3b3b3"
     property color buttonBorderInside: "#ededed"
@@ -28,11 +33,6 @@ QtObject {
     property color buttonTextFocus: "#22586e"
     property color buttonBackStartFocus: "#e4f3f9"
     property color buttonBackEndFocus: "#cae0e8"
-
-
-
-
-
 
 
 

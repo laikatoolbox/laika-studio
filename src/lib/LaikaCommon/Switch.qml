@@ -11,7 +11,6 @@ T.Switch {
         implicitWidth: 140
         implicitHeight: Theme.baseSize * 3.8
         color: Theme.lightGray
-        border.color: Theme.gray
     }
 
     leftPadding: 4
