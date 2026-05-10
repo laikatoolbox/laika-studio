@@ -16,4 +16,5 @@ qt_add_qml_module(LaikaCommon
         ThemePreview.qml
         QML_FILES ThemeSelector.qml
         QML_FILES TextArea.qml
+        QML_FILES ThemePreviewContentItem.qml
 )
