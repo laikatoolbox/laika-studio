@@ -3,15 +3,20 @@ import QtQuick.Layouts
 
 ColumnLayout {
     property color previewBackground: "#dddddd"
+    property string previewText: "System"
 
-    implicitWidth: previewRectangle.implicitWidth + previewText.implicitWidth
-    implicitHeight: previewRectangle.implicitHeight + previewText.implicitHeight
+    id: mainColumnLayout
+
+    Layout.margins: 5
+    implicitWidth: previewRectangle.implicitWidth + Layout.leftMargin + Layout.rightMargin
 
     Rectangle {
         id: previewRectangle
         radius: 5
+
         implicitWidth: 100
         implicitHeight: 100
+
         gradient: Gradient {
             GradientStop {
                 position: 0.0
@@ -25,7 +30,7 @@ ColumnLayout {
     }
 
     Text {
-        id: previewText
-        text: "Theme"
+        id: previewTextItem
+        text: previewText
     }
 }

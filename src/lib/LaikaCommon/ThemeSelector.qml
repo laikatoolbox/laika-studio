@@ -11,11 +11,18 @@ ColumnLayout {
         Layout.alignment: Qt.AlignCenter
 
         TabButton {
+            id: systemTab
             text: qsTr("System")
 
+            padding: 5
+            implicitWidth: systemThemePreview.implicitWidth + leftPadding + rightPadding
+            width: implicitWidth
+
             contentItem: ThemePreviewContentItem {
-                 previewBackground: "red"
-             }
+                id: systemThemePreview
+                previewBackground: "red"
+                previewText: systemTab.text
+            }
         }
 
         TabButton {
