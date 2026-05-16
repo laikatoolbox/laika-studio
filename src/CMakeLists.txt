@@ -23,7 +23,7 @@ endif()
 
 add_subdirectory(lib/LaikaCommon)
 
-qt_standard_project_setup(REQUIRES 6.10)
+qt_standard_project_setup(REQUIRES 6.11)
 
 qt_add_executable(laika-studio
     main.cpp
@@ -31,7 +31,7 @@ qt_add_executable(laika-studio
 
 qt_add_qml_module(laika-studio
     URI LaikaStudio
-    NO_RESOURCE_TARGET_PATH
+    #NO_RESOURCE_TARGET_PATH
     QML_FILES
         Main.qml
         Viewport.qml

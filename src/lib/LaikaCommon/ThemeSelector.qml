@@ -2,12 +2,10 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 import QtQuick.Dialogs
+import LaikaCommon
 
 ColumnLayout {
-    //Layout.fillWidth: true
-
     TabBar {
-        //Layout.fillWidth: true
         Layout.alignment: Qt.AlignCenter
 
         TabButton {
@@ -20,8 +18,10 @@ ColumnLayout {
 
             contentItem: ThemePreviewContentItem {
                 id: systemThemePreview
-                previewBackground: "red"
-                previewText: systemTab.text
+                themeName: systemTab.text
+                themeColors: ThemeColors {
+                    windowBackground: "red"
+                }
             }
         }
 

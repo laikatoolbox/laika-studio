@@ -11,10 +11,6 @@ Window {
     title: qsTr("Laika Studio")
 
     color: Theme.windowBackground
-    palette.window: Theme.windowBackground
-    palette.windowText: Theme.windowText
-    palette.base: Theme.inputBackground
-    palette.text: Theme.inputText
 
     Item {
         anchors.fill: parent

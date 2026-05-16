@@ -8,13 +8,22 @@ qt_add_qml_module(LaikaCommon
     VERSION 0.1
     SOURCES
         laika-common.h
+        ThemeColors.h
+        ThemeColors.cpp
+
     QML_FILES
         Theme.qml
         Button.qml
         CheckBox.qml
         Switch.qml
         ThemePreview.qml
-        QML_FILES ThemeSelector.qml
-        QML_FILES TextArea.qml
-        QML_FILES ThemePreviewContentItem.qml
+        ThemeSelector.qml
+        TextArea.qml
+        ThemePreviewContentItem.qml
+
+    OUTPUT_DIRECTORY
+        ${CMAKE_BINARY_DIR}/LaikaCommon
 )
+
+find_package(Qt6 REQUIRED COMPONENTS Gui)
+target_link_libraries(LaikaCommon PRIVATE Qt6::Gui)
