@@ -18,13 +18,13 @@ T.Button {
         implicitWidth: 0
         implicitHeight: 0
         opacity: enabled ? 1 : 0.5
-        border.color: Theme.buttonBorder
+        border.color: Theme.colors.buttonBorder
         border.width: 1
         radius: Theme.elementRounding
 
-        property color gradient1: Theme.buttonBackStart
-        property color gradient2: Theme.buttonBackEnd
-        property color insetBorder: Theme.buttonBorderInside
+        property color gradient1: Theme.colors.buttonBackStart
+        property color gradient2: Theme.colors.buttonBackEnd
+        property color insetBorder: Theme.colors.buttonBorderInside
 
         Rectangle {
             anchors.fill: parent
@@ -46,30 +46,30 @@ T.Button {
                 name: "normal"
                 when: !(control.down || control.activeFocus || control.hovered)
                 PropertyChanges {
-                    buttonBackground.gradient1: Theme.buttonBackStart
-                    buttonBackground.gradient2: Theme.buttonBackEnd
-                    buttonBackground.insetBorder: Theme.buttonBorderInside
-                    buttonBackground.border.color: Theme.buttonBorder
+                    buttonBackground.gradient1: Theme.colors.buttonBackStart
+                    buttonBackground.gradient2: Theme.colors.buttonBackEnd
+                    buttonBackground.insetBorder: Theme.colors.buttonBorderInside
+                    buttonBackground.border.color: Theme.colors.buttonBorder
                 }
             },
             State {
                 name: "down"
                 when: control.down
                 PropertyChanges {
-                    buttonBackground.gradient1: Theme.buttonBackStartDown
-                    buttonBackground.gradient2: Theme.buttonBackEndDown
-                    buttonBackground.insetBorder: Theme.buttonBorderInsideDown
-                    buttonBackground.border.color: Theme.buttonBorderDown
+                    buttonBackground.gradient1: Theme.colors.buttonBackStartDown
+                    buttonBackground.gradient2: Theme.colors.buttonBackEndDown
+                    buttonBackground.insetBorder: Theme.colors.buttonBorderInsideDown
+                    buttonBackground.border.color: Theme.colors.buttonBorderDown
                 }
             },
             State {
                 name: "focus"
                 when: (control.activeFocus || control.hovered) && control.enabled
                 PropertyChanges {
-                    buttonBackground.gradient1: Theme.buttonBackStartFocus
-                    buttonBackground.gradient2: Theme.buttonBackEndFocus
-                    buttonBackground.insetBorder: Theme.buttonBorderInsideFocus
-                    buttonBackground.border.color: Theme.buttonBorderFocus
+                    buttonBackground.gradient1: Theme.colors.buttonBackStartFocus
+                    buttonBackground.gradient2: Theme.colors.buttonBackEndFocus
+                    buttonBackground.insetBorder: Theme.colors.buttonBorderInsideFocus
+                    buttonBackground.border.color: Theme.colors.buttonBorderFocus
                 }
             }
         ]
@@ -80,7 +80,7 @@ T.Button {
         text: control.text
         font: control.font
         opacity: enabled ? 1.0 : 0.5
-        color: Theme.buttonText
+        color: Theme.colors.buttonText
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
@@ -94,14 +94,14 @@ T.Button {
                 name: "down"
                 when: control.down
                 PropertyChanges {
-                    textItem.color: Theme.buttonTextDown
+                    textItem.color: Theme.colors.buttonTextDown
                 }
             },
             State {
                 name: "focus"
                 when: (control.activeFocus || control.hovered) && control.enabled
                 PropertyChanges {
-                    textItem.color: Theme.buttonTextFocus
+                    textItem.color: Theme.colors.buttonTextFocus
                 }
 
             }

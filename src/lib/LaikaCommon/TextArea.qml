@@ -7,8 +7,8 @@ T.TextArea {
     font: Theme.font
 
     background: Rectangle {
-        color: Theme.inputBackground
-        border.color: Theme.inputBorder
+        color: Theme.colors.inputBackground
+        border.color: Theme.colors.inputBorder
     }
 }
 

@@ -10,7 +10,7 @@ Window {
     visible: true
     title: qsTr("Laika Studio")
 
-    color: Theme.windowBackground
+    color: Theme.colors.windowBackground
 
     Item {
         anchors.fill: parent

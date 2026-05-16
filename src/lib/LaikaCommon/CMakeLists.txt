@@ -6,12 +6,15 @@ qt_add_qml_module(LaikaCommon
     STATIC
     URI LaikaCommon
     VERSION 0.1
+
     SOURCES
         laika-common.h
         ThemeColors.h
         ThemeColors.cpp
 
     QML_FILES
+        DarkThemeColors.qml
+        LightThemeColors.qml
         Theme.qml
         Button.qml
         CheckBox.qml

@@ -9,29 +9,32 @@ class ThemeColors : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QColor windowBackground MEMBER windowBackground)
-    Q_PROPERTY(QColor windowText MEMBER windowText)
-    Q_PROPERTY(QColor viewportBackground MEMBER viewportBackground)
-    Q_PROPERTY(QColor inputBackground MEMBER inputBackground)
-    Q_PROPERTY(QColor inputText MEMBER inputText)
-    Q_PROPERTY(QColor inputBorder MEMBER inputBorder)
-    Q_PROPERTY(QColor buttonBorder MEMBER buttonBorder)
-    Q_PROPERTY(QColor buttonBorderInside MEMBER buttonBorderInside)
-    Q_PROPERTY(QColor buttonText MEMBER buttonText)
-    Q_PROPERTY(QColor buttonBackStart MEMBER buttonBackStart)
-    Q_PROPERTY(QColor buttonBackEnd MEMBER buttonBackEnd)
-    Q_PROPERTY(QColor buttonBorderDown MEMBER buttonBorderDown)
-    Q_PROPERTY(QColor buttonBorderInsideDown MEMBER buttonBorderInsideDown)
-    Q_PROPERTY(QColor buttonTextDown MEMBER buttonTextDown)
-    Q_PROPERTY(QColor buttonBackStartDown MEMBER buttonBackStartDown)
-    Q_PROPERTY(QColor buttonBackEndDown MEMBER buttonBackEndDown)
-    Q_PROPERTY(QColor buttonBorderFocus MEMBER buttonBorderFocus)
-    Q_PROPERTY(QColor buttonBorderInsideFocus MEMBER buttonBorderInsideFocus)
-    Q_PROPERTY(QColor buttonTextFocus MEMBER buttonTextFocus)
-    Q_PROPERTY(QColor buttonBackStartFocus MEMBER buttonBackStartFocus)
-    Q_PROPERTY(QColor buttonBackEndFocus MEMBER buttonBackEndFocus)
+    Q_PROPERTY(QColor windowBackground MEMBER windowBackground NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor windowText MEMBER windowText NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor viewportBackground MEMBER viewportBackground NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor inputBackground MEMBER inputBackground NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor inputText MEMBER inputText NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor inputBorder MEMBER inputBorder NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorder MEMBER buttonBorder NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorderInside MEMBER buttonBorderInside NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonText MEMBER buttonText NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackStart MEMBER buttonBackStart NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackEnd MEMBER buttonBackEnd NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorderDown MEMBER buttonBorderDown NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorderInsideDown MEMBER buttonBorderInsideDown NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonTextDown MEMBER buttonTextDown NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackStartDown MEMBER buttonBackStartDown NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackEndDown MEMBER buttonBackEndDown NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorderFocus MEMBER buttonBorderFocus NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBorderInsideFocus MEMBER buttonBorderInsideFocus NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonTextFocus MEMBER buttonTextFocus NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackStartFocus MEMBER buttonBackStartFocus NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor buttonBackEndFocus MEMBER buttonBackEndFocus NOTIFY themeColorChanged)
 
     QML_ELEMENT
+
+signals:
+    void themeColorChanged();
 
 public:
     // Window
