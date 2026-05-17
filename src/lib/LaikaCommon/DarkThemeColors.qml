@@ -3,9 +3,18 @@ import LaikaCommon
 
 ThemeColors {
     /* Window */
-    windowBackground: "red"
-    windowText: "#505050"
+    windowBackground: "#272727"
+    windowText: "#e3e3e3"
     viewportBackground: "#272727"
+
+    /* Sidebar */
+    sidebarBackground: "#121212"
+    sidebarBorder: "#3c3c3c"
+
+    /* Toolbar */
+    toolbarBackStart: "#4b4b4b"
+    toolbarBackEnd: "#303030"
+    toolbarBorder: "#3c3c3c"
 
     /* Input (textboxes) */
     inputBackground: "#ffffff"
@@ -13,11 +22,11 @@ ThemeColors {
     inputBorder: "#a6a6a6"
 
     /* Button */
-    buttonBorder: "#b3b3b3"
-    buttonBorderInside: "#ededed"
-    buttonText: "#505050"
-    buttonBackStart: "#f0f0f0"
-    buttonBackEnd: "#e0e0e0"
+    buttonBorder: "#1e1e1e"
+    buttonBorderInside: "#464646"
+    buttonText: "#ebebeb"
+    buttonBackStart: "#424242"
+    buttonBackEnd: "#272727"
 
     buttonBorderDown: "#8ea7ae"
     buttonBorderInsideDown: "#dce3e7"

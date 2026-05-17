@@ -7,6 +7,15 @@ ThemeColors {
     windowText: "#505050"
     viewportBackground: "#272727"
 
+    /* Sidebar */
+    sidebarBackground: "#d3d3d3"
+    sidebarBorder: "#bbbbbb"
+
+    /* Toolbar */
+    toolbarBackStart: "#d0d0d0"
+    toolbarBackEnd: "#bfbfbf"
+    toolbarBorder: "#9c9c9c"
+
     /* Input (textboxes) */
     inputBackground: "#ffffff"
     inputText: "#505050"

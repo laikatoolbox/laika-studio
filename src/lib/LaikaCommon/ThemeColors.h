@@ -12,6 +12,11 @@ class ThemeColors : public QObject
     Q_PROPERTY(QColor windowBackground MEMBER windowBackground NOTIFY themeColorChanged)
     Q_PROPERTY(QColor windowText MEMBER windowText NOTIFY themeColorChanged)
     Q_PROPERTY(QColor viewportBackground MEMBER viewportBackground NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor sidebarBackground MEMBER sidebarBackground NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor sidebarBorder MEMBER sidebarBorder NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor toolbarBackStart MEMBER toolbarBackStart NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor toolbarBackEnd MEMBER toolbarBackEnd NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor toolbarBorder MEMBER toolbarBorder NOTIFY themeColorChanged)
     Q_PROPERTY(QColor inputBackground MEMBER inputBackground NOTIFY themeColorChanged)
     Q_PROPERTY(QColor inputText MEMBER inputText NOTIFY themeColorChanged)
     Q_PROPERTY(QColor inputBorder MEMBER inputBorder NOTIFY themeColorChanged)
@@ -41,6 +46,15 @@ public:
     QColor windowBackground;
     QColor windowText;
     QColor viewportBackground;
+
+    // Sidebar
+    QColor sidebarBackground;
+    QColor sidebarBorder;
+
+    // Toolbar
+    QColor toolbarBackStart;
+    QColor toolbarBackEnd;
+    QColor toolbarBorder;
 
     // Input (textboxes)
     QColor inputBackground;
