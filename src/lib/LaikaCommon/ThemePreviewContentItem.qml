@@ -18,8 +18,8 @@ ColumnLayout {
         id: previewRectangle
 
         radius: buttonRadius
-        implicitWidth: 150
-        implicitHeight: 100
+        implicitWidth: 100
+        implicitHeight: 80
 
         color: themeColors.windowBackground
         border.color: windowBorder
@@ -99,8 +99,8 @@ ColumnLayout {
                 anchors.topMargin: 3
                 anchors.top: mockText.bottom
                 anchors.left: parent.left
-                anchors.right: parent.right
-                implicitHeight: 30
+                implicitWidth: mockButtonText.width + 10
+                implicitHeight: mockButtonText.height + 10
 
                 color: themeColors.buttonBorder
 
@@ -109,7 +109,7 @@ ColumnLayout {
 
                     anchors.fill: parent
                     anchors.margins: 1
-                    radius: parent.radius
+                    radius: parent.radius - 1
                     border.color: themeColors.buttonBorderInside
                     border.width: 1
 
@@ -120,6 +120,7 @@ ColumnLayout {
                     }
 
                     Text {
+                        id: mockButtonText
                         text: "Button"
                         color: themeColors.buttonText
                         horizontalAlignment: Text.AlignHCenter
