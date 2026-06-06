@@ -23,6 +23,8 @@ qt_add_qml_module(LaikaCommon
         ThemeSelector.qml
         TextArea.qml
         ThemePreviewContentItem.qml
+        TabButton.qml
+        TabBar.qml
 
     OUTPUT_DIRECTORY
         ${CMAKE_BINARY_DIR}/LaikaCommon
