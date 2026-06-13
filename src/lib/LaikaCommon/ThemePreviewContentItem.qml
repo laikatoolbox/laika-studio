@@ -3,13 +3,12 @@ import QtQuick.Layouts
 import LaikaCommon
 
 ColumnLayout {
+    id: control
     property string themeName: "System"
     property ThemeColors themeColors: ThemeColors {}
     property int buttonRadius: 5
 
     property var windowBorder: themeColors.windowBackground.hslLightness < 0.5 ? Qt.darker(themeColors.windowBackground, 0.7) : Qt.lighter(themeColors.windowBackground, 0.7)
-
-    id: mainColumnLayout
 
     Layout.margins: 5
     implicitWidth: previewRectangle.implicitWidth + Layout.leftMargin + Layout.rightMargin
@@ -46,8 +45,14 @@ ColumnLayout {
 
                 gradient: Gradient {
                     orientation: Gradient.Vertical
-                    GradientStop { position: 0.0; color: themeColors.toolbarBackStart }
-                    GradientStop { position: 1.0; color: themeColors.toolbarBackEnd }
+                    GradientStop {
+                        position: 0.0
+                        color: themeColors.toolbarBackStart
+                    }
+                    GradientStop {
+                        position: 1.0
+                        color: themeColors.toolbarBackEnd
+                    }
                 }
             }
         }
@@ -80,7 +85,6 @@ ColumnLayout {
             anchors.right: parent.right
             anchors.margins: 3
             height: mockText.implicitHeight + mockButton.implicitHeight + mockButton.anchors.topMargin
-
 
             // Mock text
             Text {
@@ -115,8 +119,14 @@ ColumnLayout {
 
                     gradient: Gradient {
                         orientation: Gradient.Vertical
-                        GradientStop { position: 0.0; color: themeColors.buttonBackStart }
-                        GradientStop { position: 1.0; color: themeColors.buttonBackEnd }
+                        GradientStop {
+                            position: 0.0
+                            color: themeColors.buttonBackStart
+                        }
+                        GradientStop {
+                            position: 1.0
+                            color: themeColors.buttonBackEnd
+                        }
                     }
 
                     Text {
@@ -136,5 +146,31 @@ ColumnLayout {
     Text {
         id: themeNameItem
         text: themeName
+
+        // Just copied from TabButton.qml
+
+        states: [
+            State {
+                name: "normal"
+                when: !(control.down || control.activeFocus || control.hovered || control.checked)
+                PropertyChanges {
+                    themeNameItem.color: Theme.colors.buttonText
+                }
+            },
+            State {
+                name: "down"
+                when: (control.down || control.checked)
+                PropertyChanges {
+                    themeNameItem.color: Theme.colors.buttonTextDown
+                }
+            },
+            State {
+                name: "focus"
+                when: (control.activeFocus || control.hovered) && control.enabled
+                PropertyChanges {
+                    themeNameItem.color: Theme.colors.buttonTextFocus
+                }
+            }
+        ]
     }
 }

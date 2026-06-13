@@ -4,9 +4,18 @@ import QtQuick
 import LaikaCommon
 
 QtObject {
+    // Don't modify outside of this file (use setTheme())! If we should color the system theme (when it comes to dark/light mode)
+    property string themeName: "auto";
+
+    // The rounding in pixels to apply to elements
     property int elementRounding: 5
 
+    // The selected theme colors
     property ThemeColors colors: LightThemeColors {}
+
+    // All the theme colors
+    property ThemeColors darkThemeColors: DarkThemeColors {}
+    property ThemeColors lightThemeColors: LightThemeColors {}
 
     readonly property color gray: "#b2b1b1"
     readonly property color lightGray: "#dddddd"
@@ -26,4 +35,40 @@ QtObject {
     font.underline: false
     font.pixelSize: 14
     font.family: "arial"
+
+    // set the current theme
+    function setTheme(newThemeName) {
+        switch (newThemeName) {
+        case "light":
+            themeName = "light"
+            break
+        case "dark":
+            themeName = "dark"
+            break
+        case "auto":
+        default:
+            themeName = "auto"
+            break
+        }
+
+        applyTheme();
+    }
+
+    // apply the current theme
+    function applyTheme() {
+        console.log(`Changing theme to: ${themeName}`);
+
+        switch (themeName) {
+        case "light":
+            colors = lightThemeColors
+            break
+        case "dark":
+            colors = darkThemeColors
+            break
+        case "auto":
+        default:
+            colors = Application.styleHints.colorScheme === Qt.ColorScheme.Dark ? darkThemeColors : lightThemeColors
+            break
+        }
+    }
 }

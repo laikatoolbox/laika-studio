@@ -30,6 +30,13 @@ Window {
         }
     }
 
+    Connections {
+        target: Application.styleHints
+        function onColorSchemeChanged() {
+            Theme.applyTheme()
+        }
+    }
+
     /*Button {
         id: button
         text: qsTr("Show Theme Demo")

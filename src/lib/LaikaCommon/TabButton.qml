@@ -103,7 +103,7 @@ T.TabButton {
         states: [
             State {
                 name: "normal"
-                when: !(control.down || control.activeFocus || control.hovered)
+                when: !(control.down || control.activeFocus || control.hovered || control.checked)
                 PropertyChanges {
                     buttonBackground.gradient1: Theme.colors.buttonBackStart
                     buttonBackground.gradient2: Theme.colors.buttonBackEnd
@@ -113,7 +113,7 @@ T.TabButton {
             },
             State {
                 name: "down"
-                when: control.down
+                when: (control.down || control.checked)
                 PropertyChanges {
                     buttonBackground.gradient1: Theme.colors.buttonBackStartDown
                     buttonBackground.gradient2: Theme.colors.buttonBackEndDown
@@ -147,11 +147,14 @@ T.TabButton {
         states: [
             State {
                 name: "normal"
-                when: !(control.down || control.activeFocus || control.hovered)
+                when: !(control.down || control.activeFocus || control.hovered || control.checked)
+                PropertyChanges {
+                    textItem.color: Theme.colors.buttonText
+                }
             },
             State {
                 name: "down"
-                when: control.down
+                when: (control.down || control.checked)
                 PropertyChanges {
                     textItem.color: Theme.colors.buttonTextDown
                 }
