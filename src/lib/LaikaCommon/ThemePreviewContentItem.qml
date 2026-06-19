@@ -152,21 +152,21 @@ ColumnLayout {
         states: [
             State {
                 name: "normal"
-                when: !(control.down || control.activeFocus || control.hovered || control.checked)
+                when: !(control.parent.down || control.parent.activeFocus || control.hovered || control.parent.checked)
                 PropertyChanges {
                     themeNameItem.color: Theme.colors.buttonText
                 }
             },
             State {
                 name: "down"
-                when: (control.down || control.checked)
+                when: (control.parent.down || control.parent.checked)
                 PropertyChanges {
                     themeNameItem.color: Theme.colors.buttonTextDown
                 }
             },
             State {
                 name: "focus"
-                when: (control.activeFocus || control.hovered) && control.enabled
+                when: (control.parent.activeFocus || control.parent.hovered) && control.parent.enabled
                 PropertyChanges {
                     themeNameItem.color: Theme.colors.buttonTextFocus
                 }

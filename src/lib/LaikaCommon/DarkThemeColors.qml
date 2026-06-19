@@ -23,20 +23,20 @@ ThemeColors {
 
     /* Button */
     buttonBorder: "#1e1e1e"
-    buttonBorderInside: "#464646"
-    buttonText: "#ebebeb"
-    buttonBackStart: "#424242"
+    buttonBorderInside: "#3e3e3e"
+    buttonText: "#d2d2d2"
+    buttonBackStart: "#333333"
     buttonBackEnd: "#272727"
 
-    buttonBorderDown: "#8ea7ae"
-    buttonBorderInsideDown: "#dce3e7"
-    buttonTextDown: "#5b7982"
-    buttonBackStartDown: "#c8d9e1"
-    buttonBackEndDown: "#e0e6ea"
+    buttonBorderDown: "#1e1e1e"
+    buttonBorderInsideDown: "#213f46"
+    buttonTextDown: "#b5e6f0"
+    buttonBackStartDown: "#1b262e"
+    buttonBackEndDown: "#1f3037"
 
-    buttonBorderFocus: "#8bbac9"
-    buttonBorderInsideFocus: "#eaf6fa"
-    buttonTextFocus: "#22586e"
-    buttonBackStartFocus: "#e4f3f9"
-    buttonBackEndFocus: "#cae0e8"
+    buttonBorderFocus: "#1e1e1e"
+    buttonBorderInsideFocus: "#1d5064"
+    buttonTextFocus: "#d0f2fa"
+    buttonBackStartFocus: "#273c44"
+    buttonBackEndFocus: "#1d2628"
 }

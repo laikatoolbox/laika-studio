@@ -16,6 +16,7 @@ T.TabButton {
     property bool isFirst: parentTabButtons[0] === this
     property bool isLast: parentTabButtons[parentTabButtons.length - 1] === this
     property bool isSecondToLast: parentTabButtons.length > 2 && parentTabButtons[parentTabButtons.length - 2] === this
+    property color buttonBorder: Theme.colors.buttonBorder
 
     background: Rectangle {
         id: buttonBackground
@@ -35,7 +36,7 @@ T.TabButton {
         // so we have to fake it
 
         // For start and end elements, we can use the regular border
-        border.color: Theme.colors.buttonBorder
+        border.color: control.buttonBorder
         border.width: (isFirst || isLast) ? 1 : 0
 
         // For every element inbetween the first and last, just render
@@ -45,21 +46,21 @@ T.TabButton {
             width: !(isFirst || isLast || isSecondToLast) ? 1 : 0
             height: parent.height
             anchors.right: parent.right
-            color: Theme.colors.buttonBorder
+            color: control.buttonBorder
         }
         // Top:
         Rectangle {
             width: parent.width
             height: !(isFirst || isLast) ? 1 : 0
             anchors.top: parent.top
-            color: Theme.colors.buttonBorder
+            color: control.buttonBorder
         }
         // Bottom:
         Rectangle {
             width: parent.width
             height: !(isFirst || isLast) ? 1 : 0
             anchors.bottom: parent.bottom
-            color: Theme.colors.buttonBorder
+            color: control.buttonBorder
         }
 
         property color gradient1: Theme.colors.buttonBackStart
@@ -108,7 +109,7 @@ T.TabButton {
                     buttonBackground.gradient1: Theme.colors.buttonBackStart
                     buttonBackground.gradient2: Theme.colors.buttonBackEnd
                     buttonBackground.insetBorder: Theme.colors.buttonBorderInside
-                    buttonBackground.border.color: Theme.colors.buttonBorder
+                    control.buttonBorder: Theme.colors.buttonBorder
                 }
             },
             State {
@@ -118,7 +119,7 @@ T.TabButton {
                     buttonBackground.gradient1: Theme.colors.buttonBackStartDown
                     buttonBackground.gradient2: Theme.colors.buttonBackEndDown
                     buttonBackground.insetBorder: Theme.colors.buttonBorderInsideDown
-                    buttonBackground.border.color: Theme.colors.buttonBorderDown
+                    control.buttonBorder: Theme.colors.buttonBorderDown
                 }
             },
             State {
@@ -128,7 +129,7 @@ T.TabButton {
                     buttonBackground.gradient1: Theme.colors.buttonBackStartFocus
                     buttonBackground.gradient2: Theme.colors.buttonBackEndFocus
                     buttonBackground.insetBorder: Theme.colors.buttonBorderInsideFocus
-                    buttonBackground.border.color: Theme.colors.buttonBorderFocus
+                    control.buttonBorder: Theme.colors.buttonBorderFocus
                 }
             }
         ]
