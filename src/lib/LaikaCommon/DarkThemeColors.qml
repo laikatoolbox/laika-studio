@@ -23,10 +23,10 @@ ThemeColors {
 
     /* Button */
     buttonBorder: "#1e1e1e"
-    buttonBorderInside: "#3e3e3e"
+    buttonBorderInside: "#474747"
     buttonText: "#d2d2d2"
-    buttonBackStart: "#333333"
-    buttonBackEnd: "#272727"
+    buttonBackStart: "#3c3c3c"
+    buttonBackEnd: "#282828"
 
     buttonBorderDown: "#1e1e1e"
     buttonBorderInsideDown: "#213f46"
@@ -39,4 +39,13 @@ ThemeColors {
     buttonTextFocus: "#d0f2fa"
     buttonBackStartFocus: "#273c44"
     buttonBackEndFocus: "#1d2628"
+
+    /* Checkboxes - mostly just take from Button, but also
+       have some of their own colors. */
+    checkboxCheckedTick: "#07b637"
+    checkboxPartiallyCheckedTick: "#d2a118"
+    checkboxCheckedBorderInset: "#3b641d"
+    checkboxPartiallyCheckedBorderInset: "#64501d"
+
+
 }

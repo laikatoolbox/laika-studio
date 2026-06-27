@@ -10,7 +10,7 @@ T.Switch {
     background: Rectangle {
         implicitWidth: 140
         implicitHeight: Theme.baseSize * 3.8
-        color: Theme.lightGray
+        color: "transparent"
     }
 
     leftPadding: 4

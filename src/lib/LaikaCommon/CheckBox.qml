@@ -6,28 +6,61 @@ T.CheckBox {
 
     font: Theme.font
 
+    opacity: enabled ? 1.0 : 0.5
+
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                                          contentItem.implicitWidth + leftPadding + rightPadding)
     implicitHeight: Math.max(background ? background.implicitHeight : 0,
                                           Math.max(contentItem.implicitHeight,
                                                    indicator ? indicator.implicitHeight : 0) + topPadding + bottomPadding)
     leftPadding: 4
+
     indicator: Rectangle {
         id: checkboxHandle
+
+        property color gradient1: Theme.colors.buttonBackStart
+        property color gradient2: Theme.colors.buttonBackEnd
+        property color checkboxTick: (control.checkState === Qt.PartiallyChecked) ? Theme.colors.checkboxPartiallyCheckedTick : Theme.colors.checkboxCheckedTick
+        property color checkboxBorderInset: (control.checkState === Qt.PartiallyChecked) ? Theme.colors.checkboxPartiallyCheckedBorderInset : Theme.colors.checkboxCheckedBorderInset
+
         implicitWidth: Theme.baseSize * 2.6
         implicitHeight: Theme.baseSize * 2.6
         x: control.leftPadding
         anchors.verticalCenter: parent.verticalCenter
+        border.color: Theme.colors.buttonBorder
+        border.width: 1
+        radius: Theme.elementRounding
+
+        Rectangle {
+            id: buttonInsetBorder
+            anchors.fill: checkboxHandle
+            anchors.margins: 1
+            radius: parent.radius
+            color: "transparent"
+            border.color: (control.checkState === Qt.Unchecked) ? Theme.colors.buttonBorderInside : checkboxHandle.checkboxBorderInset
+            border.width: 1
+        }
+
+        gradient: Gradient {
+            orientation: Gradient.Vertical
+            GradientStop { position: 0.0; color: checkboxHandle.gradient1 }
+            GradientStop { position: 1.0; color: checkboxHandle.gradient2 }
+        }
 
         Rectangle {
             id: rectangle
-            width: Theme.baseSize * 1.4
-            height: Theme.baseSize * 1.4
-            x: Theme.baseSize * 0.6
-            y: Theme.baseSize * 0.6
-            radius: Theme.baseSize * 0.4
+            anchors.centerIn: checkboxHandle
             visible: false
-            color: Theme.mainColor
+            color: "red"
+
+            Text {
+                id: indicatorText
+                anchors.centerIn: rectangle
+                color: checkboxHandle.checkboxTick
+                text: (control.checkState === Qt.PartiallyChecked) ? "‒" : "✓"
+                font.pointSize: 14
+                font.bold: false
+            }
         }
 
         states: [
@@ -37,7 +70,7 @@ T.CheckBox {
             },
             State {
                 name: "checked"
-                when: control.checkState == Qt.Checked && !control.down
+                when: control.checkState !== Qt.Unchecked && !control.down
 
                 PropertyChanges {
                     rectangle.visible: true
@@ -53,9 +86,16 @@ T.CheckBox {
                 }
             },
             State {
+                name: "partial"
+                when: control.checkState == Qt.PartiallyChecked
+
+                PropertyChanges {
+                }
+            },
+            State {
                 name: "checked_down"
                 extend: "unchecked_down"
-                when: control.checkState == Qt.Checked && control.down
+                when: control.checkState !== Qt.Unchecked  && control.down
 
                 PropertyChanges {
                     rectangle.visible: true
@@ -67,7 +107,7 @@ T.CheckBox {
     background: Rectangle {
         implicitWidth: 140
         implicitHeight: Theme.baseSize * 3.8
-        color: Theme.lightGray
+        color: "transparent"
     }
 
     contentItem: Text {
@@ -75,7 +115,7 @@ T.CheckBox {
 
         text: control.text
         font: control.font
-        color: Theme.dark
+        color: Theme.colors.windowText
         elide: Text.ElideRight
         visible: control.text
         horizontalAlignment: Text.AlignLeft

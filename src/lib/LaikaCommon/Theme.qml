@@ -25,7 +25,7 @@ QtObject {
     readonly property color dark: "#222222"
     readonly property color mainColorDarker: Qt.darker(mainColor, 1.5)
 
-    property int baseSize: 10
+    property int baseSize: 8
 
     readonly property int smallSize: 10
     readonly property int largeSize: 16
@@ -70,5 +70,7 @@ QtObject {
             colors = Application.styleHints.colorScheme === Qt.ColorScheme.Dark ? darkThemeColors : lightThemeColors
             break
         }
+
+        //Qt.application.palette.windowText = colors.windowText
     }
 }

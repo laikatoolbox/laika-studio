@@ -39,4 +39,11 @@ ThemeColors {
     buttonTextFocus: "#22586e"
     buttonBackStartFocus: "#e4f3f9"
     buttonBackEndFocus: "#cae0e8"
+
+    /* Checkboxes - mostly just take from Button, but also
+       have some of their own colors. */
+    checkboxCheckedTick: "#28783d"
+    checkboxPartiallyCheckedTick: "#967720"
+    checkboxCheckedBorderInset: "#cdffda"
+    checkboxPartiallyCheckedBorderInset: "#fde5ae"
 }

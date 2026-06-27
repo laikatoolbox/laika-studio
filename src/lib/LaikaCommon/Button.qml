@@ -27,6 +27,7 @@ T.Button {
         property color insetBorder: Theme.colors.buttonBorderInside
 
         Rectangle {
+            id: buttonInsetBorder
             anchors.fill: parent
             anchors.margins: 1
             radius: parent.radius
