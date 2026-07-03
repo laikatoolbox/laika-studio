@@ -22,14 +22,14 @@ ThemeColors {
     inputBorder: "#a6a6a6"
 
     /* Button */
-    buttonBorder: "#1e1e1e"
-    buttonBorderInside: "#474747"
+    buttonBorder: "#141414"
+    buttonBorderInside: "#444444"
     buttonText: "#d2d2d2"
     buttonBackStart: "#3c3c3c"
     buttonBackEnd: "#282828"
 
     buttonBorderDown: "#1e1e1e"
-    buttonBorderInsideDown: "#213f46"
+    buttonBorderInsideDown: "#23444b"
     buttonTextDown: "#b5e6f0"
     buttonBackStartDown: "#1b262e"
     buttonBackEndDown: "#1f3037"
@@ -47,5 +47,15 @@ ThemeColors {
     checkboxCheckedBorderInset: "#3b641d"
     checkboxPartiallyCheckedBorderInset: "#64501d"
 
-
+    /* Switches */
+    switchNubBorder: "#090909"
+    switchNubBorderInside: "#505050"
+    switchNubBackStart: "#3c3c3c"
+    switchNubBackEnd: "#1e1e1e"
+    switchTrackBorder: "#3c3c3c"
+    switchTrackStart: "#191919"
+    switchTrackEnd: "#232323"
+    switchTrackBorderSelected: "#287a3d"
+    switchTrackStartSelected: "#1a4e27"
+    switchTrackEndSelected: "#256f38"
 }

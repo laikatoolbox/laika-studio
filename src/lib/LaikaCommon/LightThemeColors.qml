@@ -43,7 +43,19 @@ ThemeColors {
     /* Checkboxes - mostly just take from Button, but also
        have some of their own colors. */
     checkboxCheckedTick: "#28783d"
-    checkboxPartiallyCheckedTick: "#967720"
+    checkboxPartiallyCheckedTick: "#96720f"
     checkboxCheckedBorderInset: "#cdffda"
-    checkboxPartiallyCheckedBorderInset: "#fde5ae"
+    checkboxPartiallyCheckedBorderInset: "#ffea96"
+
+    /* Switches */
+    switchNubBorder: "#b3b3b3"
+    switchNubBorderInside: "#ededed"
+    switchNubBackStart: "#f0f0f0"
+    switchNubBackEnd: "#e0e0e0"
+    switchTrackBorder: "#b3b3b3"
+    switchTrackStart: "#e0e0e0"
+    switchTrackEnd: "#f0f0f0"
+    switchTrackBorderSelected: "#28783d"
+    switchTrackStartSelected: "#2f8d47"
+    switchTrackEndSelected: "#56c772"
 }

@@ -51,6 +51,18 @@ class ThemeColors : public QObject
     Q_PROPERTY(QColor checkboxCheckedBorderInset MEMBER checkboxCheckedBorderInset NOTIFY themeColorChanged)
     Q_PROPERTY(QColor checkboxPartiallyCheckedBorderInset MEMBER checkboxPartiallyCheckedBorderInset NOTIFY themeColorChanged)
 
+    // Switches
+    Q_PROPERTY(QColor switchNubBorder MEMBER switchNubBorder NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchNubBorderInside MEMBER switchNubBorderInside NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchNubBackStart MEMBER switchNubBackStart NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchNubBackEnd MEMBER switchNubBackEnd NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackBorder MEMBER switchTrackBorder NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackStart MEMBER switchTrackStart NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackEnd MEMBER switchTrackEnd NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackBorderSelected MEMBER switchTrackBorderSelected NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackStartSelected MEMBER switchTrackStartSelected NOTIFY themeColorChanged)
+    Q_PROPERTY(QColor switchTrackEndSelected MEMBER switchTrackEndSelected NOTIFY themeColorChanged)
+
     QML_ELEMENT
 
 signals:
@@ -97,6 +109,18 @@ public:
     QColor checkboxPartiallyCheckedTick;
     QColor checkboxCheckedBorderInset;
     QColor checkboxPartiallyCheckedBorderInset;
+
+
+    QColor switchNubBorder;
+    QColor switchNubBorderInside;
+    QColor switchNubBackStart;
+    QColor switchNubBackEnd;
+    QColor switchTrackBorder;
+    QColor switchTrackStart;
+    QColor switchTrackEnd;
+    QColor switchTrackBorderSelected;
+    QColor switchTrackStartSelected;
+    QColor switchTrackEndSelected;
 };
 
 #endif // THEMECOLORS_H

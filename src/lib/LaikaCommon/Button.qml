@@ -17,7 +17,7 @@ T.Button {
         id: buttonBackground
         implicitWidth: 0
         implicitHeight: 0
-        opacity: enabled ? 1 : 0.5
+        opacity: enabled ? 1 : Theme.grayedOutOpacity
         border.color: Theme.colors.buttonBorder
         border.width: 1
         radius: Theme.elementRounding

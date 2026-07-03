@@ -10,6 +10,9 @@ QtObject {
     // The rounding in pixels to apply to elements
     property int elementRounding: 5
 
+    // How much the opacity should be for grayed out (disabled elements)
+    property real grayedOutOpacity: 0.4
+
     // The selected theme colors
     property ThemeColors colors: LightThemeColors {}
 

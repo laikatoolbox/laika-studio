@@ -6,7 +6,7 @@ T.CheckBox {
 
     font: Theme.font
 
-    opacity: enabled ? 1.0 : 0.5
+    opacity: enabled ? 1.0 : Theme.grayedOutOpacity
 
     implicitWidth: Math.max(background ? background.implicitWidth : 0,
                                          contentItem.implicitWidth + leftPadding + rightPadding)
@@ -58,7 +58,7 @@ T.CheckBox {
                 anchors.centerIn: rectangle
                 color: checkboxHandle.checkboxTick
                 text: (control.checkState === Qt.PartiallyChecked) ? "‒" : "✓"
-                font.pointSize: 14
+                font.pointSize: 13
                 font.bold: false
             }
         }

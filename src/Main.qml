@@ -5,8 +5,8 @@ import LaikaCommon
 import QtQuick.Layouts
 
 Window {
-    width: 750
-    height: 520
+    width: 805
+    height: 600
     visible: true
     title: qsTr("Laika Studio")
     id: window
